@@ -4,6 +4,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Image as ImageIcon, FileText, Video } from "lucide-react";
 import Link from "next/link";
+import { WalletConnect } from "@/components/WalletConnect";
 
 export default function CreateCoinPage() {
   return (
@@ -14,11 +15,11 @@ export default function CreateCoinPage() {
           </div>
           <div className="flex items-center gap-4">
               <Link href="/create">
-                  <Button className="bg-gorbagana-gradient text-white">
+                  <Button className="bg-primary text-primary-foreground">
                       Create a coin
                   </Button>
               </Link>
-              <Button size="sm">Log In</Button>
+              <WalletConnect />
           </div>
       </header>
       <main className="flex flex-1 flex-col gap-4 p-4 lg:gap-6 lg:p-6">

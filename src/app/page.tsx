@@ -15,6 +15,7 @@ import {
   AvatarImage,
 } from "@/components/ui/avatar";
 import Link from "next/link";
+import { WalletConnect } from "@/components/WalletConnect";
 
 const tokens = [
   {
@@ -112,11 +113,11 @@ export default function PumpFunClone() {
             </div>
             <div className="flex items-center gap-4">
                 <Link href="/create">
-                    <Button className="bg-gorbagana-gradient text-white">
+                    <Button className="bg-primary text-primary-foreground">
                         Create a coin
                     </Button>
                 </Link>
-                <Button size="sm">Log In</Button>
+                <WalletConnect />
             </div>
         </header>
         <main className="flex flex-1 flex-col gap-4 p-4 lg:gap-6 lg:p-6">

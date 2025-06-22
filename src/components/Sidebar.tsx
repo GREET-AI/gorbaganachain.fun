@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import {
   Home,
   LineChart,
@@ -19,8 +20,11 @@ import {
   CollapsibleContent,
   CollapsibleTrigger,
 } from "@/components/ui/collapsible";
+import { cn } from "@/lib/utils";
 
 export function Sidebar() {
+  const pathname = usePathname();
+
   return (
     <div className="hidden border-r bg-muted/40 md:block">
       <div className="flex h-full max-h-screen flex-col gap-2">
@@ -34,21 +38,30 @@ export function Sidebar() {
           <nav className="grid items-start px-2 text-sm font-medium lg:px-4">
             <Link
               href="/"
-              className="flex items-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:text-primary"
+              className={cn(
+                "flex items-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:text-primary",
+                pathname === "/" && "bg-muted text-primary"
+              )}
             >
               <Home className="h-4 w-4" />
               Home
             </Link>
             <Link
-              href="#"
-              className="flex items-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:text-primary"
+              href="/livestreams"
+              className={cn(
+                "flex items-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:text-primary",
+                pathname === "/livestreams" && "bg-muted text-primary"
+              )}
             >
               <LineChart className="h-4 w-4" />
               Livestreams
             </Link>
             <Link
-              href="#"
-              className="flex items-center gap-3 rounded-lg bg-muted px-3 py-2 text-primary transition-all hover:text-primary"
+              href="/profile"
+              className={cn(
+                "flex items-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:text-primary",
+                pathname === "/profile" && "bg-muted text-primary"
+              )}
             >
               <Users className="h-4 w-4" />
               Profile
@@ -83,7 +96,7 @@ export function Sidebar() {
         </div>
         <div className="mt-auto p-4">
             <Link href="/create" className="w-full">
-              <Button size="sm" className="w-full bg-gorbagana-gradient text-white">
+              <Button size="sm" className="w-full bg-primary text-primary-foreground">
                   <PlusCircle className="h-4 w-4 mr-2" /> Create Coin
               </Button>
             </Link>
