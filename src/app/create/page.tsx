@@ -4,7 +4,6 @@ import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Image as ImageIcon, FileText, Video } from "lucide-react";
 import Link from "next/link";
-import { Search } from "lucide-react";
 
 export default function CreateCoinPage() {
   return (
@@ -33,7 +32,7 @@ export default function CreateCoinPage() {
               <CardHeader>
                 <CardTitle>Coin Details</CardTitle>
                 <CardDescription>
-                  Choose carefully, these can't be changed once the coin is created.
+                  Choose carefully, these can&apos;t be changed once the coin is created.
                 </CardDescription>
               </CardHeader>
               <CardContent className="space-y-6">
@@ -72,8 +71,8 @@ export default function CreateCoinPage() {
                     <div>
                       <h4 className="font-semibold">File size and type</h4>
                       <ul className="list-disc pl-5 text-xs text-muted-foreground">
-                        <li>Image - max 15mb. ".jpg", ".gif" or ".png" recommended</li>
-                        <li>Video - max 30mb. ".mp4" recommended</li>
+                        <li>Image - max 15mb. &quot;.jpg&quot;, &quot;.gif&quot; or &quot;.png&quot; recommended</li>
+                        <li>Video - max 30mb. &quot;.mp4&quot; recommended</li>
                       </ul>
                     </div>
                   </div>
