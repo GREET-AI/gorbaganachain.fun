@@ -1,4 +1,6 @@
-import { Search } from "lucide-react";
+"use client";
+
+import { Search, Copy } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import {
@@ -123,6 +125,10 @@ export default function PumpFunClone() {
         <main className="flex flex-1 flex-col gap-4 p-4 lg:gap-6 lg:p-6">
           <div className="flex flex-col items-center gap-4">
             <Link href="/create" className="text-3xl font-bold tracking-tight">[start a new coin]</Link>
+            <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                <span>CA: J493w8y5nwhMF1CRTV3mKf6jP4yRNftT8Xgz2Tagpump</span>
+                <Copy className="h-4 w-4 cursor-pointer hover:text-primary" onClick={() => navigator.clipboard.writeText('J493w8y5nwhMF1CRTV3mKf6jP4yRNftT8Xgz2Tagpump')} />
+            </div>
             <div className="w-full max-w-lg">
                 <form>
                     <div className="relative">
