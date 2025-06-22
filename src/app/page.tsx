@@ -7,6 +7,7 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
+  CardDescription,
 } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import {
@@ -14,7 +15,7 @@ import {
   AvatarFallback,
   AvatarImage,
 } from "@/components/ui/avatar";
-import { Sidebar } from "@/components/Sidebar";
+import Link from "next/link";
 
 const tokens = [
   {
@@ -105,19 +106,23 @@ function TokenCard({ token }: { token: (typeof tokens)[0] }) {
 
 export default function PumpFunClone() {
   return (
-    <div className="grid min-h-screen w-full md:grid-cols-[220px_1fr] lg:grid-cols-[280px_1fr]">
-      <Sidebar />
       <div className="flex flex-col">
         <header className="flex h-14 items-center gap-4 border-b bg-muted/40 px-4 lg:h-[60px] lg:px-6">
             <div className="w-full flex-1">
                 {/* Potentially a top-bar component like in pump.fun */}
             </div>
-            <Button variant="outline" size="sm">Create Coin</Button>
-            <Button size="sm">Log In</Button>
+            <div className="flex items-center gap-4">
+                <Link href="/create">
+                    <Button className="bg-gorbagana-gradient text-white">
+                        Create a coin
+                    </Button>
+                </Link>
+                <Button size="sm">Log In</Button>
+            </div>
         </header>
         <main className="flex flex-1 flex-col gap-4 p-4 lg:gap-6 lg:p-6">
           <div className="flex flex-col items-center gap-4">
-            <h1 className="text-3xl font-bold tracking-tight">[start a new coin]</h1>
+            <Link href="/create" className="text-3xl font-bold tracking-tight">[start a new coin]</Link>
             <div className="w-full max-w-lg">
                 <form>
                     <div className="relative">
@@ -138,6 +143,5 @@ export default function PumpFunClone() {
           </div>
         </main>
       </div>
-    </div>
   );
 }

@@ -33,7 +33,7 @@ export function Sidebar() {
         <div className="flex-1">
           <nav className="grid items-start px-2 text-sm font-medium lg:px-4">
             <Link
-              href="#"
+              href="/"
               className="flex items-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:text-primary"
             >
               <Home className="h-4 w-4" />
@@ -82,9 +82,11 @@ export function Sidebar() {
           </nav>
         </div>
         <div className="mt-auto p-4">
-            <Button size="sm" className="w-full bg-gorbagana-gradient text-white">
-                <PlusCircle className="h-4 w-4 mr-2" /> Create Coin
-            </Button>
+            <Link href="/create" className="w-full">
+              <Button size="sm" className="w-full bg-gorbagana-gradient text-white">
+                  <PlusCircle className="h-4 w-4 mr-2" /> Create Coin
+              </Button>
+            </Link>
         </div>
       </div>
     </div>
