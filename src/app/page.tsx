@@ -1,25 +1,9 @@
-import Image from "next/image";
-import {
-  Bell,
-  Home,
-  LineChart,
-  Package2,
-  Users,
-  CircleHelp,
-  Search,
-  PlusCircle,
-  MoreHorizontal,
-  Twitter,
-  Instagram,
-  Youtube,
-  Send,
-} from "lucide-react";
+import { Search } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import {
   Card,
   CardContent,
-  CardDescription,
   CardFooter,
   CardHeader,
   CardTitle,
@@ -30,11 +14,6 @@ import {
   AvatarFallback,
   AvatarImage,
 } from "@/components/ui/avatar";
-import {
-  Collapsible,
-  CollapsibleContent,
-  CollapsibleTrigger,
-} from "@/components/ui/collapsible";
 import { Sidebar } from "@/components/Sidebar";
 
 const tokens = [
